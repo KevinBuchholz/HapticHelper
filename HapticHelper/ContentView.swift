@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var model: ViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            ScrollView{
+                    ForEach(model.feedbackArray, id: \.self) { feedback in
+
+                        Button(action: {feedback.triggerFeedback()}, label: {Text(feedback.rawValue.capitalized)
+                                .frame(maxWidth: .infinity)
+                        })
+                        .buttonStyle(HapticButtonStyle())
+                        .padding()
+                    }
+                    .padding()
+                        .navigationTitle("Haptic Helper")
+                }
+                .padding()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    let viewModelPreview = ViewModel()
+    
+    return ContentView()
+        .environmentObject(viewModelPreview)
 }
