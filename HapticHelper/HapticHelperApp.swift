@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HapticHelperApp: App {
+    
+    @EnvironmentObject var model : ViewModel
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ViewModel())
         }
     }
 }
