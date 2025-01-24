@@ -13,13 +13,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                ForEach(model.feedbackArray, id: \.self) { feedback in
-                    Button(action: {feedback.triggerFeedback()}, label: {Text(feedback.rawValue.capitalized)
-                            .frame(maxWidth: .infinity)
-                    })
+                NavigationLink("UI Notification", destination: UINotificationHaptics())
                     .buttonStyle(HapticButtonStyle())
-                    .padding()
-                }
+                    .foregroundStyle(.blue)
+                    
                 NavigationLink("Custom Haptics", destination: CustomHapticView())
                     .buttonStyle(HapticButtonStyle())
                     .foregroundStyle(.blue)
