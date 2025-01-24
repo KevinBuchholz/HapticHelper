@@ -14,7 +14,6 @@ struct ContentView: View {
         NavigationStack{
             ScrollView{
                     ForEach(model.feedbackArray, id: \.self) { feedback in
-
                         Button(action: {feedback.triggerFeedback()}, label: {Text(feedback.rawValue.capitalized)
                                 .frame(maxWidth: .infinity)
                         })
