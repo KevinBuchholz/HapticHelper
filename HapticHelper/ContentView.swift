@@ -13,19 +13,22 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                    ForEach(model.feedbackArray, id: \.self) { feedback in
-                        Button(action: {feedback.triggerFeedback()}, label: {Text(feedback.rawValue.capitalized)
-                                .frame(maxWidth: .infinity)
-                        })
-                        .buttonStyle(HapticButtonStyle())
-                        .padding()
-                    }
+                ForEach(model.feedbackArray, id: \.self) { feedback in
+                    Button(action: {feedback.triggerFeedback()}, label: {Text(feedback.rawValue.capitalized)
+                            .frame(maxWidth: .infinity)
+                    })
+                    .buttonStyle(HapticButtonStyle())
                     .padding()
-                        .navigationTitle("Haptic Helper")
                 }
+                NavigationLink("Custom Haptics", destination: CustomHapticView())
+                    .buttonStyle(HapticButtonStyle())
+                    .foregroundStyle(.blue)
+            }
                 .padding()
+                .navigationTitle("Haptic Helper")
+            }
+            .padding()
         }
-    }
 }
 
 #Preview {
