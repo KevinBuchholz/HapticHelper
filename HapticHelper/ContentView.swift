@@ -13,19 +13,29 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                NavigationLink("UI Notification", destination: UINotificationHaptics())
-                    .buttonStyle(HapticButtonStyle())
-                    .foregroundStyle(.blue)
+                VStack {
+                    NavigationLink("UI Notification", destination: UINotificationHaptics())
+                        .buttonStyle(HapticButtonStyle())
+                        .foregroundStyle(.teal)
+                        .padding()
+                }
                     
                 NavigationLink("Custom Haptics", destination: CustomHapticView())
                     .buttonStyle(HapticButtonStyle())
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(.teal)
+                    .padding()
                 
                 NavigationLink("Sensory Feedback", destination: SensoryFeedbackView())
                     .buttonStyle(HapticButtonStyle())
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(.teal)
+                    .padding()
+                
+                NavigationLink("Core Haptics", destination: CoreHapticView())
+                    .buttonStyle(HapticButtonStyle())
+                    .foregroundStyle(.teal)
+                    .padding()
             }
-                .padding()
+            .padding(.vertical, 80)
                 .navigationTitle("Haptic Helper")
             }
             .padding()
