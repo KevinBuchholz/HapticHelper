@@ -20,6 +20,10 @@ struct ContentView: View {
                 NavigationLink("Custom Haptics", destination: CustomHapticView())
                     .buttonStyle(HapticButtonStyle())
                     .foregroundStyle(.blue)
+                
+                NavigationLink("Sensory Feedback", destination: SensoryFeedbackView())
+                    .buttonStyle(HapticButtonStyle())
+                    .foregroundStyle(.blue)
             }
                 .padding()
                 .navigationTitle("Haptic Helper")
