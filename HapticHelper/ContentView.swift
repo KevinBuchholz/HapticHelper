@@ -5,6 +5,10 @@
 //  Created by Kevin Buchholz on 1/22/25.
 //
 
+// Content View contains links to all the different haptic views. Each of the different views has different types of haptics for you to test out.
+// They're pretty easy to implement and you can probably figure out how they work by looking at the code in this project. I generally used Hacking With Swift tutorials to get started. 
+
+
 import SwiftUI
 
 struct ContentView: View {
